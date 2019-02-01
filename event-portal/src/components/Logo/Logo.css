@@ -1,6 +1,10 @@
 .Logo{
     position: absolute;
-    top: 20px;
-    left: calc(50% - 10px);
+    top: 7px;
+    left: calc(50% - 25px);
     background-image: url('./niantic-logo-white.png');
+}
+
+.LogoImage{
+    width:50px;
 }

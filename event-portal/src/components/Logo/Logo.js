@@ -5,7 +5,7 @@ class Logo extends React.Component{
     render(){
         return (
             <div className="Logo">
-                <img src="/Logo/niantic-logo-white.png" alt="Niantic Earth Day"/>
+                <img src={require('./niantic-logo-white.png')} alt="Niantic Earth Day" className="LogoImage"/>
             </div>
         )    
     }

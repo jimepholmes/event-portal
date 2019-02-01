@@ -1,6 +1,7 @@
 import React from 'react';
 import './TitleBar.css';
-import Logo from '../Logo/Logo'
+import Logo from '../Logo/Logo';
+import Hamburger from '../Hamburger/Hamburger';
 
 class TitleBar extends React.Component{
     constructor (props){
@@ -12,6 +13,7 @@ class TitleBar extends React.Component{
         return (
             <div className="TitleBar">
                 <Logo />
+                <Hamburger />
             </div>
         )
     }
