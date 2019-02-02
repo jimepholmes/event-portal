@@ -1,0 +1,27 @@
+.Container{
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    width:40px;
+    cursor: 'pointer';
+}
+.MessageIconImage{
+    width:20px;
+    cursor: 'pointer';
+}
+.MessageCount{
+    position: absolute;
+    top:-10px;
+    right:-5px;
+    height:15px;
+    min-width: 15px;
+    border-radius: 13px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: 'pointer';
+    padding-top:3px;
+    padding-left:3px;
+    padding-right:3px;
+}

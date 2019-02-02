@@ -1,22 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './TitleBar.css';
 import Logo from '../Logo/Logo';
-import Hamburger from '../Hamburger/Hamburger';
+import MessageIcon from '../TitleBar/MessageIcon/MessageIcon'
 
 class TitleBar extends React.Component{
-    constructor (props){
-        super (props);
-
-    }
-
     render(){
         return (
             <div className="TitleBar">
                 <Logo />
-                <Hamburger />
+                <MessageIcon messageCount={this.props.messageCount}/>
             </div>
         )
     }
 }
+
+TitleBar.propTypes = {
+    messageCount: PropTypes.number.isRequired
+};
+
 
 export default TitleBar;
