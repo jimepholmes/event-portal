@@ -4,7 +4,7 @@ import './EarthDayLogo.css';
 class EarthDayLogo extends React.Component{
     render(){
         return (
-            <div className="EarthDayLogo">
+            <div>
                 <img src={require('./earth-day.png')} alt="Niantic Earth Day" className="EarthDayLogoImage"/>
             </div>
         )

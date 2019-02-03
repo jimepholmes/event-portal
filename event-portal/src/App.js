@@ -5,6 +5,7 @@ import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
 import MenuButton from './components/Menu/MenuButton/MenuButton';
 import Header from './components/Header/Header';
+import EventList from './components/EventList/EventList';
 import './App.css';
 
 class App extends Component {
@@ -12,11 +13,84 @@ class App extends Component {
     super(props);
     this.state={
       menuOpen:false,
-      messageCount: 0
+      messageCount: 0,
+      events: []  //this is used to load in the default events
     }
-    setInterval(()=>this.updateMessageCount(), 2000);   //this line also binds 'this' to the function
+    setInterval(()=>this.updateMessageCount(), 10000);   //this line also binds 'this' to the function
+  }
+
+  componentDidMount(){
+    this.getHomePageEvents();
   }
   
+  getHomePageEvents(){
+    console.log(`Searching for homepage events`);
+    //Yelp.search(term, location, sortBy).then(theBusinesses => {
+      //alert(theBusinesses);
+      //console.log(theBusinesses);
+      let testEvents = [
+        {
+          id:1,
+          name: "Jims first test event",
+          startDate: "2019-04-21 00:07:00",
+          endDate: "2019-04-21 00:17:00",
+          location: "London",
+          countryCode: "UK",
+          imagePath: "beach-cleanup.png"
+        },
+        {
+          id:2,
+          name: "Jims second test event",
+          startDate: "2019-04-22 00:07:00",
+          endDate: "2019-04-22 00:17:00",
+          location: "Cardiff",
+          countryCode: "UK",
+          imagePath: "beach-cleanup.png"
+        },
+        {
+          id:3,
+          name: "Jims third test event",
+          startDate: "2019-04-21 00:13:00",
+          endDate: "2019-04-21 00:17:00",
+          location: "Manchester",
+          countryCode: "UK",
+          imagePath: "beach-cleanup.png"
+        },
+        {
+          id:4,
+          name: "Jims fourth test event",
+          startDate: "2019-04-19 00:09:00",
+          endDate: "2019-04-19 00:13:00",
+          location: "Chicago",
+          countryCode: "USA",
+          imagePath: "beach-cleanup.png"
+        },
+        {
+          id:5,
+          name: "Jims fifth test event",
+          startDate: "2019-04-22 00:07:00",
+          endDate: "2019-04-22 00:17:00",
+          location: "San Francisco",
+          countryCode: "USA",
+          imagePath: "beach-cleanup.png"
+        },
+        {
+          id:6,
+          name: "Jims sixth test event",
+          startDate: "2019-04-21 00:09:00",
+          endDate: "2019-04-21 00:12:00",
+          location: "London",
+          countryCode: "UK",
+          imagePath: "beach-cleanup.png"
+        },
+
+      ]
+      this.setState({
+        events: testEvents
+      })  
+    //})
+  }
+
   handleMenuClick() {
     this.setState(
       {
@@ -83,6 +157,7 @@ class App extends Component {
             {menuItems}
         </Menu>
         <Header />
+        <EventList events={this.state.events}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>

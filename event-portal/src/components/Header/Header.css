@@ -10,17 +10,38 @@
 
   .HeaderText{
     position: absolute;
-    top:90px;
+    top:0px;
     font-size:1.1em;
     font-weight:bold;
-    left: calc(50% - 75px);
+    left: 120px;
   }
 
   .IntroText{
     position: absolute;
-    top:130px;
-    font-size:0.8em;
-    left: calc(50% - 75px);
-    width:400px;
+    top:60px;
+    font-size:0.7em;
+    left: 170px;
+    width:250px;
     text-align: left;
   }
+
+  .HeaderContainer{
+      position: absolute;
+      top: 90px;
+      width: 450px;
+      height: 203px;
+      left: calc(50% - 200px);
+    }
+
+    .EarthDayLogo{
+        position: absolute;
+        top:35px;
+        left: 0px;
+        width:170px;
+    }
+
+    @media only screen and (max-width: 560px) {
+        .IntroText{
+            width:200px;
+          }        
+    }
