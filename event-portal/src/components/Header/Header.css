@@ -1,0 +1,26 @@
+.Header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('./background-blurred.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 15rem;
+  }
+
+  .HeaderText{
+    position: absolute;
+    top:90px;
+    font-size:1.1em;
+    font-weight:bold;
+    left: calc(50% - 75px);
+  }
+
+  .IntroText{
+    position: absolute;
+    top:130px;
+    font-size:0.8em;
+    left: calc(50% - 75px);
+    width:400px;
+    text-align: left;
+  }

@@ -4,6 +4,7 @@ import TitleBar from './components/TitleBar/TitleBar';
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
 import MenuButton from './components/Menu/MenuButton/MenuButton';
+import Header from './components/Header/Header';
 import './App.css';
 
 class App extends Component {
@@ -11,15 +12,27 @@ class App extends Component {
     super(props);
     this.state={
       menuOpen:false,
+      messageCount: 0
     }
+    setInterval(()=>this.updateMessageCount(), 2000);   //this line also binds 'this' to the function
   }
   
   handleMenuClick() {
-    this.setState({menuOpen:!this.state.menuOpen});
+    this.setState(
+      {
+        menuOpen:!this.state.menuOpen
+      });
   }
   
   handleLinkClick() {
     this.setState({menuOpen: false});
+  }
+
+  updateMessageCount(){
+    this.setState(
+      {
+        messageCount: Math.floor((Math.random() * 10) + 1)
+      })
   }
 
   render() {
@@ -62,13 +75,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <TitleBar messageCount="6"/>
+        <TitleBar messageCount={this.state.messageCount}/>
         <div style={styles.container}>
           <MenuButton open={this.state.menuOpen} onClick={()=>this.handleMenuClick()} color='white'/>
         </div>
         <Menu open={this.state.menuOpen}>
             {menuItems}
         </Menu>
+        <Header />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
