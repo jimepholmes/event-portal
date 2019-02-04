@@ -3,11 +3,10 @@
     top: 20px;
     right: 60px;
     width:40px;
-    cursor: 'pointer';
+    cursor: pointer;
 }
 .MessageIconImage{
     width:20px;
-    cursor: 'pointer';
 }
 .MessageCount{
     position: absolute;
@@ -20,7 +19,6 @@
     color: white;
     font-weight: bold;
     font-size: 0.8em;
-    cursor: 'pointer';
     padding-top:3px;
     padding-left:3px;
     padding-right:3px;

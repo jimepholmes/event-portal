@@ -45,7 +45,7 @@ class App extends Component {
           endDate: "2019-04-22 00:17:00",
           location: "Cardiff",
           countryCode: "UK",
-          imagePath: "beach-cleanup.png"
+          imagePath: "beach-cleanup2.png"
         },
         {
           id:3,
@@ -63,14 +63,14 @@ class App extends Component {
           endDate: "2019-04-19 00:13:00",
           location: "Chicago",
           countryCode: "USA",
-          imagePath: "beach-cleanup.png"
+          imagePath: "beach-cleanup2.png"
         },
         {
           id:5,
           name: "Jims fifth test event",
           startDate: "2019-04-22 00:07:00",
           endDate: "2019-04-22 00:17:00",
-          location: "San Francisco",
+          location: "San Fran",
           countryCode: "USA",
           imagePath: "beach-cleanup.png"
         },
@@ -81,7 +81,7 @@ class App extends Component {
           endDate: "2019-04-21 00:12:00",
           location: "London",
           countryCode: "UK",
-          imagePath: "beach-cleanup.png"
+          imagePath: "beach-cleanup2.png"
         },
 
       ]
@@ -136,7 +136,7 @@ class App extends Component {
         height: '100vh',
         filter: this.state.menuOpen ? 'blur(2px)':null,
         transition: 'filter 0.5s ease',
-      },
+      }
     }    
     const menu = ['About Us','Our Products','Services','FAQ','Contact Us']
     const menuItems = menu.map((val,index)=>{
