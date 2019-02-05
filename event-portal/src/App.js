@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import TitleBar from './components/TitleBar/TitleBar';
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
 import MenuButton from './components/Menu/MenuButton/MenuButton';
 import Header from './components/Header/Header';
 import EventList from './components/EventList/EventList';
+import FindEvent from './components/Buttons/FindEvent/FindEvent';
+import SubmitEvent from './components/Buttons/SubmitEvent/SubmitEvent';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 class App extends Component {
@@ -24,7 +26,6 @@ class App extends Component {
   }
   
   getHomePageEvents(){
-    console.log(`Searching for homepage events`);
     //Yelp.search(term, location, sortBy).then(theBusinesses => {
       //alert(theBusinesses);
       //console.log(theBusinesses);
@@ -136,6 +137,9 @@ class App extends Component {
         height: '100vh',
         filter: this.state.menuOpen ? 'blur(2px)':null,
         transition: 'filter 0.5s ease',
+      },
+      submitEvent: {
+        marginTop: '50px'
       }
     }    
     const menu = ['About Us','Our Products','Services','FAQ','Contact Us']
@@ -158,20 +162,15 @@ class App extends Component {
         </Menu>
         <Header />
         <EventList events={this.state.events}/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="mobileButtons">
+            <div>
+              <FindEvent />
+            </div>
+            <div style={styles.submitEvent}>
+              <SubmitEvent />
+            </div>
+        </div> 
+        <Footer />
       </div>
     );
   }

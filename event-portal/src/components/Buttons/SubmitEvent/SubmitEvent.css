@@ -1,0 +1,19 @@
+.SubmitEventButton {
+    text-align: center;
+}
+  
+.SubmitEventButton a {
+    border-radius: 20px;
+    padding: 1rem 5.5rem;
+    background-color: #78b7cc;
+    color: #000;
+    font-weight: 600;
+    font-size: .8rem;
+    transition: background-color .5s;
+}
+
+.SubmitEventButton a:hover {
+    cursor: pointer;
+    background-color: #cef2ff;
+    border:solid 1px grey;
+}

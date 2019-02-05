@@ -25,23 +25,27 @@
     text-align: left;
   }
 
+.HeaderContainer{
+  position: absolute;
+  top: 90px;
+  width: 450px;
+  height: 203px;
+  left: calc(50% - 200px);
+}
+
+.EarthDayLogo{
+  position: absolute;
+  top:35px;
+  left: 0px;
+  width:170px;
+}
+
+@media only screen and (max-width: 560px) {
+  .IntroText{
+    width:200px;
+  }
+  
   .HeaderContainer{
-      position: absolute;
-      top: 90px;
-      width: 450px;
-      height: 203px;
-      left: calc(50% - 200px);
-    }
-
-    .EarthDayLogo{
-        position: absolute;
-        top:35px;
-        left: 0px;
-        width:170px;
-    }
-
-    @media only screen and (max-width: 560px) {
-        .IntroText{
-            width:200px;
-          }        
-    }
+    width: 390px;
+  }
+}
