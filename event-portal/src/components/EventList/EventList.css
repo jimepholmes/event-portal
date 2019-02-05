@@ -7,3 +7,19 @@
     padding-top: 10px;
     overflow: hidden;
   }
+
+  .EventListHeader{
+    position:absolute;
+    top:340px;
+    left: calc(50%-80px);
+    font-weight: bold;
+    font-size:.8rem;
+  }
+
+  .EventListMoreLink{
+    position:absolute;
+    top:580px;
+    left: 87%;
+    font-weight: bold;
+    font-size:.8rem;
+  }

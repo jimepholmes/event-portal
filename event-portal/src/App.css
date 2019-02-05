@@ -22,6 +22,16 @@
   color: #61dafb;
 }
 
+a {
+  font-size: .7rem;
+  color: #6dd6c8;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
