@@ -8,6 +8,23 @@
     padding-top:100px;
 }
 
-.TitleText{
-    font-size: 5rems;
+.EventSearchHeader{
+    font-weight: bold;
+    font-size:.8rem;
 }
+
+.EventSearchIntro{
+    padding-top: 15px;
+    font-size:.8rem;
+}
+
+.EventSearchInputBox{
+    padding-top: 15px;
+    width:300px;
+    margin:auto;
+}
+
+.SearchButton{
+    padding-top: 20px;    
+}
+
