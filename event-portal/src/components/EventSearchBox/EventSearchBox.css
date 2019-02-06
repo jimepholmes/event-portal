@@ -1,0 +1,13 @@
+.EventSearchBox{
+    width:50%;
+    height:400px;
+    background-color: #f2f2f2;
+}
+
+.SearchControls{
+    padding-top:100px;
+}
+
+.TitleText{
+    font-size: 5rems;
+}

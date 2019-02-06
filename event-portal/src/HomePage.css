@@ -44,6 +44,15 @@ body{
   display: block;
 }
 
+.MapEventSearch{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 400px;
+  margin: auto;
+  width: 100%;
+}
 
 @keyframes App-logo-spin {
   from {

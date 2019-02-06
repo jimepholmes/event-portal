@@ -4,9 +4,11 @@ import Menu from './components/Menu/Menu';
 import MenuButton from './components/Menu/MenuButton/MenuButton';
 import Header from './components/Header/Header';
 import EventList from './components/EventList/EventList';
-import FindEvent from './components/Buttons/FindEvent/FindEvent';
-import SubmitEvent from './components/Buttons/SubmitEvent/SubmitEvent';
+import FindEventButton from './components/Buttons/FindEvent/FindEvent';
+import SubmitEventButton from './components/Buttons/SubmitEvent/SubmitEvent';
 import ActionBar from './components/ActionBar/ActionBar';
+import Map from './components/Map/Map';
+import EventSearchBox from './components/EventSearchBox/EventSearchBox';
 import Footer from './components/Footer/Footer';
 import './HomePage.css';
 
@@ -111,14 +113,18 @@ class HomePage extends Component {
         <EventList events={this.state.events}/>
         <div className="mobileButtons">
             <div>
-              <FindEvent style={{}}/>
+              <FindEventButton style={{}}/>
             </div>
             <div style={styles.submitEvent}>
-              <SubmitEvent />
+              <SubmitEventButton />
             </div>
         </div> 
         <div className="desktop">
             <ActionBar />
+            <div className="MapEventSearch">
+                <Map />
+                <EventSearchBox />
+            </div>
         </div>
         <Footer />
       </div>

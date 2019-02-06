@@ -1,7 +1,7 @@
 import React from 'react';
 import './FindEvent.css';
 
-class FindEvent extends React.Component{
+class FindEventButton extends React.Component{
     render(){
         return (
             <div className="SubmitButton">
@@ -11,4 +11,4 @@ class FindEvent extends React.Component{
     }
 }
 
-export default FindEvent;
+export default FindEventButton;

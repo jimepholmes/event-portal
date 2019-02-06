@@ -1,7 +1,7 @@
 import React from 'react';
 import './SubmitEvent.css';
 
-class SubmitEvent extends React.Component{
+class SubmitEventButton extends React.Component{
     render(){
         return (
             <div className="SubmitEventButton">
@@ -12,4 +12,4 @@ class SubmitEvent extends React.Component{
 
 }
 
-export default SubmitEvent;
+export default SubmitEventButton;
