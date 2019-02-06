@@ -15,7 +15,7 @@ class EventList extends React.Component{
                     })
                 }
                 <div className="EventListMoreLink">
-                    <a href="">See All ▶</a>
+                    <a href="/EventSearch">See All ▶</a>
                 </div>
             </div>            
         );

@@ -5,7 +5,7 @@ class SubmitEvent extends React.Component{
     render(){
         return (
             <div className="SubmitEventButton">
-                <a>SUBMIT AN EVENT</a>
+                <a href="/SuggestEvent" style={this.props.style}>SUGGEST AN EVENT</a>
             </div>
         )
     }

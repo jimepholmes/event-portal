@@ -1,20 +1,20 @@
-.SubmitEventButton {
+.SignUpButton {
     text-align: center;
 }
   
-.SubmitEventButton a {
+.SignUpButton a {
     border-radius: 20px;
-    padding: 1rem 5.1rem;
-    background-color: #78b7cc;
-    border:solid 2px #000;
+    padding: 1rem 4rem;
+    background-color: #c3dd4f;
     color: #000;
     font-weight: 600;
     font-size: .8rem;
+    border:solid 2px #000;
     transition: background-color .5s;
 }
 
-.SubmitEventButton a:hover {
+.SignUpButton a:hover {
     cursor: pointer;
-    background-color: #cef2ff;
+    background-color: #000;
     border:solid 2px #000;
 }

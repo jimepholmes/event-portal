@@ -1,0 +1,28 @@
+.ActionBar {
+    width: 100%;
+    background-color: #c3dd4f;
+    height: 10rem;
+  }
+
+  .ActionBarButtons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 100px;
+    padding-top:50px;
+    margin: auto;
+    width: 700px;   
+  }
+
+  .ActionBarText {
+    padding-top:30px;
+    font-size: .8rem;
+    margin: auto;
+    width: 600px;
+  }
+
+  .ActionBarSuggestEvent{
+    padding-top: 48px;
+    padding-left: 350px;
+  }

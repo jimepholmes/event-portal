@@ -29,7 +29,7 @@ a {
 }
 
 a:hover{
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 body{
@@ -40,6 +40,11 @@ body{
   display: none;
 }
 
+.desktop{
+  display: block;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -49,9 +54,13 @@ body{
   }
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 700px) {
   .mobileButtons{
     display: block;
     height: 120px;
+  }
+
+  .desktop{
+    display:none;
   }
 }
