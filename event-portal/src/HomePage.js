@@ -16,15 +16,24 @@ class HomePage extends Component {
   constructor(props){
     super(props);
     this.state={
-      messageCount: 0,
-      events: []  //this is used to load in the default events
+        messageCount: 0,
+        events: [],  //this is used to load in the default events
+        mapCentre: "San Francisco"
     }
+
+    this.setMapCentre = this.setMapCentre.bind(this);
   }
 
   componentDidMount(){
     this.getHomePageEvents();
   }
   
+    setMapCentre(searchText){
+        this.setState({
+            mapCentre: searchText
+        })
+    }
+
   getHomePageEvents(){
     //Yelp.search(term, location, sortBy).then(theBusinesses => {
       //alert(theBusinesses);
@@ -122,8 +131,8 @@ class HomePage extends Component {
         <div className="desktop">
             <ActionBar />
             <div className="MapEventSearch">
-                <Map />
-                <EventSearchBox />
+                <Map mapCentre={this.state.mapCentre}/>
+                <EventSearchBox handleSearch={this.setMapCentre}/>
             </div>
         </div>
         <Footer />
