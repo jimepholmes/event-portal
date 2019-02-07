@@ -1,0 +1,24 @@
+.RecentEventsList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4.4rem 10%;
+    padding-top: 10px;
+    overflow: hidden;
+  }
+
+  .RecentEventsListHeader{
+    position:absolute;
+    top:1260px;
+    left: calc(50%-80px);
+    font-weight: bold;
+    font-size:.8rem;
+  }
+
+  .RecentEventsListMoreLink{
+    position:absolute;
+    top:580px;
+    left: 87%;
+    font-weight: bold;
+    font-size:.8rem;
+  }

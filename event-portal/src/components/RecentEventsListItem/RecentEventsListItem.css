@@ -1,0 +1,56 @@
+.RecentEvent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20rem;
+    -webkit-box-shadow: 0 0 10px grey;
+    box-shadow: 0 0 15px grey;
+    cursor: pointer;
+    margin-bottom: 2.2rem;
+  }
+  
+  .RecentEvent .image-container {
+    height: 65px;
+    width: 80px;
+  }
+    
+  .RecentEvent-information {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+    
+  .RecentEvent-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-left: 0.6rem;
+  }
+
+  .RecentEvent-day {
+    font-size: 2rem;
+  }
+
+  .RecentEvent-month {
+    font-size: .88rem;
+  }
+
+  .RecentEvent-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .RecentEvent-detail h3 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: .3rem;
+  }
+
+  .RecentEvent-detail h4 {
+    font-size: 0.8rem;
+  }

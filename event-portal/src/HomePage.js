@@ -9,6 +9,7 @@ import SubmitEventButton from './components/Buttons/SubmitEvent/SubmitEvent';
 import ActionBar from './components/ActionBar/ActionBar';
 import Map from './components/Map/Map';
 import EventSearchBox from './components/EventSearchBox/EventSearchBox';
+import RecentEventsList from './components/RecentEventsList/RecentEventsList';
 import Footer from './components/Footer/Footer';
 import './HomePage.css';
 
@@ -134,6 +135,7 @@ class HomePage extends Component {
                 <Map mapCentre={this.state.mapCentre}/>
                 <EventSearchBox handleSearch={this.setMapCentre}/>
             </div>
+            <RecentEventsList events={this.state.events}/>
         </div>
         <Footer />
       </div>
