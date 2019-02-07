@@ -10,47 +10,31 @@
   }
   
   .RecentEvent .image-container {
-    height: 65px;
+    display: flex;
+    height: 80px;
     width: 80px;
   }
     
   .RecentEvent-information {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    background-color: #fff;
-  }
+    background-color: #F2F2F2;
+    width:250px;
+    padding:1rem;
+    font-size: .8rem;
+}
     
-  .RecentEvent-date{
+  .RecentEvent-name {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-    padding-left: 0.6rem;
-  }
-
-  .RecentEvent-day {
-    font-size: 2rem;
-  }
-
-  .RecentEvent-month {
-    font-size: .88rem;
-  }
-
-  .RecentEvent-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     text-align: left;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-  }
-  
-  .RecentEvent-detail h3 {
-    font-size: 0.8rem;
     font-weight: bold;
-    margin-top: .3rem;
+    font-size: .9rem;
   }
 
-  .RecentEvent-detail h4 {
-    font-size: 0.8rem;
-  }
+  .RecentEvent-info{
+    display: flex;
+    text-align: left;
+    line-height: 0.9rem;
+
+}

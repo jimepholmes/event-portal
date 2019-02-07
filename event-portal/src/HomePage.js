@@ -93,7 +93,7 @@ class HomePage extends Component {
           location: "London",
           countryCode: "UK",
           imagePath: "beach-cleanup2.png"
-        },
+        }
 
       ]
       this.setState({

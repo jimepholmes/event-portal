@@ -19,14 +19,13 @@ class RecentEventListItem extends React.Component{
         return (
             <div className="RecentEvent" style={styles.container}>
                 <div className="image-container" style={styles.image}></div>
-                <div className="Event-information">
-                    <div className="Event-date">
-                        <span className="Event-day">{Day}</span>
-                        <span className="Event-month">{Month}</span>
-                    </div>
-                    <div className="Event-detail">
+                <div className="RecentEvent-information">                    
+                    <div className="RecentEvent-name">
                         <h3>{this.props.event.name}</h3>
-                        <h4>{this.props.event.location}, {this.props.event.countryCode}</h4>
+                    </div>
+                    <div className="RecentEvent-info">
+                        {Day} {Month}<br/>
+                        {this.props.event.location}, {this.props.event.countryCode}
                     </div>
                 </div>
             </div>
