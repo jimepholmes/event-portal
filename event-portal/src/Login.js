@@ -1,25 +1,25 @@
 import React, {useState, useEffect} from 'react';
-import './Registration.css';
+import './Login.css';
 import TitleBarBlank from './components/TitleBarBlank/TitleBarBlank';
-import RegistrationForm from './components/RegistrationForm/RegistrationForm';
+import LoginForm from './components/LoginForm/LoginForm';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-const Registration = props => {
+const Login = props => {
 
     return (
       <div className="App">
         <TitleBarBlank useBlack="true"/>
-        <div className="Registration">
-          <div className="RegistrationContainer">
-            <div className="RegTitleText">WELCOME TO EARTH DAY 2019</div>
-            <RegistrationForm />
+        <div className="Login">
+          <div className="LoginContainer">
+            <div className="LoginTitleText">WELCOME TO EARTH DAY 2019</div>
+            <LoginForm />
             <div className="pageLinks">
               <a href="contact">Contact Information</a><br/>
               <a href="faq">FAQ</a><br/>
             </div>
-          </div> 
-          <div className="RegFooter">
+          </div>        
+          <div className="LoginFooter">
             <Footer />
           </div>       
         </div>
@@ -27,4 +27,4 @@ const Registration = props => {
     )
 }
 
-export default Registration;
+export default Login;

@@ -3,7 +3,7 @@
     text-align: center;
   }
   
-.Registration{
+.Login{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,7 @@
     background-repeat: no-repeat;
     height:100%;
 }
-.RegistrationContainer{
+.LoginContainer{
     position: absolute;
     top: 90px;
     width: 450px;
@@ -20,13 +20,13 @@
     left: calc(50% - 225px);
   }
   
-  .RegTitleText{
+  .LoginTitleText{
     font-size: 1.1em;
     font-weight: bold;
     margin-bottom: 3rem;
   }
-
-  .RegFooter{
+  
+  .LoginFooter{
     position: absolute;
     left: calc(50% - 340px);
     bottom: 10px;
@@ -44,13 +44,14 @@
 }
 
   @media only screen and (max-width: 450px) {
-    .RegistrationContainer{
+    .LoginContainer{
         left:0px;
         width:100%;
     }
 
-    .RegFooter{
-      width:400px;
-      left: 0px;
-    }
-  }
+    .LoginFooter{
+        width:400px;
+        left: 0px;
+      }
+    
+}
