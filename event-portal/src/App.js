@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Registration from './Registration';
 import HomePage from './HomePage';
 import EventSearch from './EventSearch';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
@@ -75,7 +76,8 @@ class App extends Component {
   }
 
   handleLinkClick() {
-    this.setState({menuOpen: false});
+    window.location="/registration";
+    //this.setState({menuOpen: false});
   }
 
   updateMessageCount(){
@@ -93,6 +95,9 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={props => (
               <HomePage menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            )}/>
+            <Route exact path="/Registration" render={props => (
+              <Registration menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
             )}/>
             <Route exact path="/EventSearch" render={props => (
               <EventSearch menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>

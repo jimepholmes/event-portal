@@ -1,0 +1,35 @@
+.GenericButton {
+    text-align: center;
+}
+  
+.GenericButton a {
+    border-radius: 20px;
+    padding: 1rem 4rem;
+    background-color: #c3dd4f;
+    color: #000;
+    font-weight: 600;
+    font-size: .8rem;
+    border:solid 2px #000;
+    transition: background-color .5s;
+}
+
+.GenericButton a:hover {
+    cursor: pointer;
+    background-color: #000;
+    border:solid 2px #000;
+    color: #c3dd4f;
+}
+
+.GenericButton span {
+    border-radius: 20px;
+    padding: 1rem 4rem;
+    background-color: rgba(195, 221, 79, 0.5);
+    color: #000;
+    font-weight: 600;
+    font-size: .8rem;
+    border:solid 2px #000;
+}
+
+.GenericButton span:hover {
+    cursor: not-allowed;
+}

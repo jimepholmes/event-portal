@@ -1,18 +1,29 @@
-import React, { Component } from 'react';
-import TitleBar from './components/TitleBar/TitleBar';
-import Menu from './components/Menu/Menu';
-import MenuButton from './components/Menu/MenuButton/MenuButton';
+import React, {useState, useEffect} from 'react';
+import './Registration.css';
+import TitleBarBlank from './components/TitleBarBlank/TitleBarBlank';
+import RegistrationForm from './components/RegistrationForm/RegistrationForm';
 import Header from './components/Header/Header';
-import EventList from './components/EventList/EventList';
-import FindEventButton from './components/Buttons/FindEvent/FindEvent';
-import SubmitEventButton from './components/Buttons/SubmitEvent/SubmitEvent';
-import ActionBar from './components/ActionBar/ActionBar';
-import Map from './components/Map/Map';
-import EventSearchBox from './components/EventSearchBox/EventSearchBox';
-import RecentEventsList from './components/RecentEventsList/RecentEventsList';
 import Footer from './components/Footer/Footer';
-import './HomePage.css';
 
+const Registration = props => {
+    const [messageCount, setMessageCount] = useState(0);
+
+    return (
+      <div className="App">
+        <TitleBarBlank useBlack="true"/>
+        <div className="Registration">
+          <div className="RegistrationContainer">
+            <div className="RegTitleText">WELCOME TO EARTH DAY 2019</div>
+            <RegistrationForm />
+          </div>        
+        </div>
+      </div>
+    )
+}
+
+export default Registration;
+
+/*
 class HomePage extends Component {
   constructor(props){
     super(props);
@@ -119,7 +130,7 @@ class HomePage extends Component {
         <Menu open={this.props.menuOpen}>
             {this.props.menuItems}
         </Menu>
-        <Header headerText="EARTH DAY 2019"/>
+        <Header />
         <EventList events={this.state.events}/>
         <div className="mobileButtons">
             <div>
@@ -144,3 +155,4 @@ class HomePage extends Component {
 }
 
 export default HomePage;
+*/

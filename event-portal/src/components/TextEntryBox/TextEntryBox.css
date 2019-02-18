@@ -1,0 +1,17 @@
+.TextEntryBox{
+    margin:auto;
+}
+
+.TextEntryBox input {
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 0rem;
+    background: rgba(255, 255, 255, 0.5)
+  }
+
+.TextEntryBox password {
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 0rem;
+    background: rgba(255, 255, 255, 0.5)
+  }
