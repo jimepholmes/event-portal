@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './RegistrationForm.css';
 import TextEntryBox from '../TextEntryBox/TextEntryBox';
 import Checkbox from '../CheckBox/CheckBox';
 import GenericButton from '../Buttons/Generic/Generic';
+import API from '../../util/API';
 
 const RegistrationForm = props => {
     const [firstName, setFirstName] = useState("");
@@ -15,49 +16,54 @@ const RegistrationForm = props => {
 
     function setObjectFirstName(event){
         setFirstName(event.target.value);
-        console.log(`first name:${event.target.value}`);
     }
 
     function setObjectLastName(event){
         setLastName(event.target.value);
-        console.log(`last name:${event.target.value}`);
     }
 
     function setObjectEmailAddress(event){
         setEmailAddress(event.target.value);
-        console.log(`Email Address:${event.target.value}`);
     }
 
     function setObjectPassword(event){
         setPassword(event.target.value);
-        console.log(`password:${event.target.value}`);
     }
 
     function setPrivacy(event){
-        console.log(`checked:${event.target.checked}`);
-        console.log(`privacy optin b4:${privacyOptIn}`);
-        //setPrivacyOptIn(event.target.checked);
-        //enableButton();
-
-        setPrivacyOptIn(event.target.checked, function () {
-            //console.log(this.state.boardAddModalShow);
-            console.log(`privacy optin after: ${privacyOptIn}`);
-        });        
+        setPrivacyOptIn(event.target.checked);
     }
 
     function setEventOptin(event){
-        console.log(`event checked:${event.target.checked}`);
         setEventOptIn(event.target.checked);
     }
 
     function enableButton(){
-        console.log(`privacy optin:${privacyOptIn}`);
         if (privacyOptIn ){
             setButtonEnabled(true);
         }else{
             setButtonEnabled(false);
         }
     }
+
+    function handleRegistration(){
+        console.log("would handle the registation!");
+        API.newUser(firstName, lastName, emailAddress, password, 1).then(newUserInfo => {
+            //alert(theBusinesses);
+            console.log("new user info:");
+            console.log(newUserInfo);
+            if (newUserInfo.response == "error"){
+                console.log(newUserInfo.message)
+            }else{
+                //successful user, so do something else here...move them to login?
+
+            }
+          })        
+    }
+
+    useEffect(() => {
+        enableButton();
+    });    
 
     const styles = {
         SignUp: {
@@ -73,7 +79,7 @@ const RegistrationForm = props => {
         <TextEntryBox onChange={setObjectPassword} type="password" placeHolderText="Password"/>
         <Checkbox id="chkPrivacy" onChange={setPrivacy} label="By signing up you agree to our <a href='/privacy'>Privacy Policy</a> and <a href='/eula'>EULA</a>" />
         <Checkbox id="chkUpdates" onChange={setEventOptin} label="Keep me updated about Niantic products, news, events and promotions" />
-        <GenericButton enabled={buttonEnabled} containerStyle={styles.SignUp} caption="SIGN UP" />
+        <GenericButton enabled={buttonEnabled} containerStyle={styles.SignUp} caption="SIGN UP" onChange={handleRegistration}/>
       </div>
     )
 }

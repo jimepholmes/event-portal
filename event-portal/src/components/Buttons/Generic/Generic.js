@@ -7,7 +7,7 @@ const GenericButton = (props) => {
     if (props.enabled){
         return (
             <div className="GenericButton" style={props.containerStyle}>
-                <a href="/SignUp" style={props.style}>{props.caption}</a>
+                <a onClick={props.onChange} style={props.style}>{props.caption}</a>
             </div>
         )    
     }else{
