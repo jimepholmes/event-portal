@@ -1,0 +1,17 @@
+
+
+.hidden{
+    opacity:0;
+    transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+    height:1.5rem;
+    font-weight: bold;
+    color: red;
+}
+
+.show{
+    opacity:1;
+    transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+    height:1.5rem;
+    font-weight: bold;
+    color: red;
+}

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './Login.css';
 import TitleBarBlank from './components/TitleBarBlank/TitleBarBlank';
 import LoginForm from './components/LoginForm/LoginForm';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 const Login = props => {

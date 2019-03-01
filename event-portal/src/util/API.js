@@ -19,6 +19,24 @@ const API = {
         }).then(function(data) {
             return data;
         });
+    },
+
+    login(email, password){
+        return fetch('https://api-event-platform.playmob.com/user/login', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: email,
+              password: password
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
     }
 
 
