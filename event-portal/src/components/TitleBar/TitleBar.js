@@ -22,7 +22,7 @@ const TitleBar = (props) => {
 }
 
 TitleBar.propTypes = {
-    loggedIn: PropTypes.number.isRequired,
+    loggedIn: PropTypes.bool.isRequired,
     messageCount: PropTypes.number.isRequired
 };
 TitleBar.defaultProps = {

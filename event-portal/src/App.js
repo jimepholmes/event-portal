@@ -122,19 +122,19 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" render={props => (
-            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
           <Route exact path="/Registration" render={props => (
-            <Registration menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            <Registration menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
           <Route exact path="/Login" render={props => (
-            <Login menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            <Login menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
           <Route exact path="/EventSearch" render={props => (
-            <EventSearch loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            <EventSearch loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
           <Route exact path="/home" render={props => (
-            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
         </Switch>
       </Router>
