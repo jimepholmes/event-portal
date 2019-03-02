@@ -112,7 +112,7 @@ class HomePage extends Component {
 
     return (
       <div className="App">
-        <TitleBar messageCount={this.props.messageCount}/>
+        <TitleBar loggedIn={this.props.loggedIn} messageCount={this.props.messageCount}/>
         <div style={this.props.containerStyle}>
           <MenuButton open={this.props.menuOpen} onClick={()=>this.props.handleMenuClick()} color='white'/>
         </div>

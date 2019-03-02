@@ -4,19 +4,30 @@ import './TitleBar.css';
 import Logo from '../Logo/Logo';
 import MessageIcon from '../TitleBar/MessageIcon/MessageIcon'
 
-class TitleBar extends React.Component{
-    render(){
+const TitleBar = (props) => {
+    if (props.loggedIn){
         return (
             <div className="TitleBar">
                 <Logo />
-                <MessageIcon messageCount={this.props.messageCount}/>
+                <MessageIcon messageCount={props.messageCount}/>
             </div>
-        )
+        )    
+    }else{
+        return (
+            <div className="TitleBar">
+                <Logo />
+            </div>
+        )    
     }
 }
 
 TitleBar.propTypes = {
+    loggedIn: PropTypes.number.isRequired,
     messageCount: PropTypes.number.isRequired
+};
+TitleBar.defaultProps = {
+    loggedIn: false,
+    messageCount: "0"
 };
 
 

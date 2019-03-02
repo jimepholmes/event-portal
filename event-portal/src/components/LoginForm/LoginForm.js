@@ -52,7 +52,8 @@ const LoginForm = props => {
                 console.log(userInfo.message)
             } else {
                 //successful login, so drop the cookie and push them to their home page (depending on user type?)
-
+                Utils.setCookie("pmev_session_guid", userInfo.message, 10);
+                window.location = "/"
             }
         })
     }

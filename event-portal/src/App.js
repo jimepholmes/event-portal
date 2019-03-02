@@ -5,14 +5,16 @@ import Login from './Login';
 import HomePage from './HomePage';
 import EventSearch from './EventSearch';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
+import Utils from './util/utils';
+import API from './util/API';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: true,  //set to true to skip login check for now
+      loggedIn: false,
       messageCount: 0,
-      menu: ['About Us','Our Products','Services','FAQ','Contact Us'],
+      menu: ['About Us','Our Products','Services','FAQ','Contact Us', 'Log In', 'Register'],
       menuOpen: false,
       containerStyle:{
         position: 'absolute',
@@ -30,26 +32,40 @@ class App extends Component {
     }
 
     this.handleMenuClick = this.handleMenuClick.bind(this);
-    this.handleLinkClick = this.handleLinkClick.bind(this);
+    //this.handleLinkClick = this.handleLinkClick.bind(this);
 
     setInterval(()=>this.updateMessageCount(), 10000);   //this line also binds 'this' to the function
 }
 
   componentDidMount() {
-    this.checkForLoginCookie();
-    this.buildMenu();
+    this.checkLogin();
   };
 
-  checkForLoginCookie = () => {
-    /*
-    const userService = UserService.getInstance();
-    if (userService.getSessionGuid()) {
-      this.props.postCheckUserLogin({loginSessionGuid: userService.getSessionGuid()}).then(this.userChecked)
-    } else {
-      this.props.userLoginSessionChecked();
-      this.userChecked();
+  checkLogin = () => {
+    let sessionCookie = Utils.getCookie("pmev_session_guid");
+    console.log(`sessionCookie: ${sessionCookie}`)
+    if (sessionCookie.length>0){
+      //there is a cookie, so check that its valid
+      API.checkSession(sessionCookie).then(sessionInfo => {
+        if (sessionInfo.response == "success") {
+          this.setState({
+            loggedIn: true,
+            //add a logout button to the menu          
+            menu: ['About Us','Our Products','Services','FAQ','Contact Us', 'Log Out']
+          })
+          this.buildMenu();
+        } else {
+          this.setState({
+            loggedIn: false
+          })
+          //as hygiene, clear the log in cookie
+          Utils.clearCookie("pmev_session_guid");
+          this.buildMenu();
+        }
+      })
+    }else{
+      this.buildMenu();
     }
-    */
   };
 
   buildMenu = () => {
@@ -58,16 +74,13 @@ class App extends Component {
         <MenuItem 
           key={index} 
           delay={`${index * 0.1}s`}
-          onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
+          onClick={()=>{this.handleLinkClick(val);}}>{val}</MenuItem>)
     });  
 
     this.setState({
       menuItems: menuItems
     });
   }
-  userChecked = () => {
-    this.setState({checked: true});
-  };
 
   handleMenuClick() {
     this.setState(
@@ -76,8 +89,23 @@ class App extends Component {
       });
   }
 
-  handleLinkClick() {
-    window.location="/registration";
+  handleLinkClick(menuClicked) {
+    console.log(`menu clicked: ${menuClicked}`)
+    switch (menuClicked){
+      case "Log In":
+        window.location="/login"
+        break;
+      case "Register":
+        window.location="/registration"
+        break;
+      case "Log Out":
+        Utils.clearCookie("pmev_session_guid");
+        window.location="/"
+        break;
+      default:
+
+    }
+    //window.location="/registration";
     //this.setState({menuOpen: false});
   }
 
@@ -90,31 +118,29 @@ class App extends Component {
 
 
   render() {
-    if (this.state.checked) {
-      return (
-        <Router>
-          <Switch>
-            <Route exact path="/" render={props => (
-              <HomePage menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
-            )}/>
-            <Route exact path="/Registration" render={props => (
-              <Registration menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
-            )}/>
-            <Route exact path="/Login" render={props => (
-              <Login menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
-            )}/>
-            <Route exact path="/EventSearch" render={props => (
-              <EventSearch menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
-            )}/>
-            <Route exact path="/home" render={props => (
-              <HomePage menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
-            )}/>
-          </Switch>
-        </Router>
-      );
-    }
-    //return <Loader size='large'>Loading</Loader>;
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" render={props => (
+            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/Registration" render={props => (
+            <Registration menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/Login" render={props => (
+            <Login menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/EventSearch" render={props => (
+            <EventSearch loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/home" render={props => (
+            <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} handleLinkClick={this.handleLinkClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+        </Switch>
+      </Router>
+    );
   }
+  //return <Loader size='large'>Loading</Loader>;
 }
 
 export default App;
