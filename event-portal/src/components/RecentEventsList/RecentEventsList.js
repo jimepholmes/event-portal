@@ -6,19 +6,22 @@ class RecentEventsList extends React.Component{
     render(){
         return (
             <div>
+                <div className="SectionTitle">
+                    {this.props.titleText}
+                </div>
                 <div className="RecentEventsList">
-                    <div className="RecentEventsListHeader">
-                        RECENTLY ADDED EVENTS
-                    </div>
                     {
                         this.props.events.map(event => {
                             return <RecentEventsListItem key={event.id} event={event}/>
                         })
                     }
                 </div>
-                <div className="RecentEventsListMoreLink">
+                { this.props.showAllLink 
+                 ? <div className="RecentEventsListMoreLink">
                     <a href="/EventSearch">See All ▶</a>
                 </div>
+                : <div></div>
+                }
             </div>
         );
     }

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Registration from './Registration';
 import Login from './Login';
 import HomePage from './HomePage';
+import NGOHome from './NGOHome';
 import EventSearch from './EventSearch';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
 import Utils from './util/utils';
@@ -135,6 +136,9 @@ class App extends Component {
           )}/>
           <Route exact path="/home" render={props => (
             <HomePage loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/ngo" render={props => (
+            <NGOHome loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
         </Switch>
       </Router>

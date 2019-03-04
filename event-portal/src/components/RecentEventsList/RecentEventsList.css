@@ -1,3 +1,8 @@
+.SectionTitle{
+  padding-top: 20px;
+  font-weight: bold;
+  font-size:.8rem;
+}
 .RecentEventsList {
     display: flex;
     flex-direction: row;
@@ -5,7 +10,7 @@
     flex-wrap: wrap;
     padding-top: 10px;
     overflow: hidden;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
   .RecentEventsListHeader{

@@ -10,10 +10,12 @@ class EventListItem extends React.Component{
                 overflow: 'hidden'
             },
             image: {
-                backgroundImage: `url(${require(`./${this.props.event.imagePath}`)})`,
+                backgroundImage: `url(${this.props.event.imagePath})`,
                 backgroundPosition: 'center' 
             }
         }        
+        //                backgroundImage: `url(${require(`./${this.props.event.imagePath}`)})`,
+
         let Day = Utils.getDatePart(this.props.event.startDate, "dd");
         let Month = Utils.getDatePart(this.props.event.startDate, "mm");
         return (

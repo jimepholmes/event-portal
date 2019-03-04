@@ -1,5 +1,8 @@
 
 const Utils = {
+    getCampaignGUID(){
+        return "fcfb9fdc-6934-4a2c-8b39-f307d1845a00"  //world earth day
+    },
 
     setCookie(name,value,days){
         var expires = "";
@@ -35,10 +38,14 @@ const Utils = {
     getDatePart(inDate, datePart){
         var myDate = new Date(inDate);        
         switch (datePart){
+            case "mins":
+                return ('0'+myDate.getMinutes()).slice(-2);
+            case "hh":
+                return ('0'+myDate.getHours()).slice(-2);
             case "dd":
                 return myDate.getDate()
             case "mm":
-                return this.getMonthShort(myDate.getMonth())
+                return this.getMonthShort(myDate.getMonth()+1)
             default:
                 return inDate;
         }

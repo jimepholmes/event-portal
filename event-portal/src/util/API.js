@@ -54,6 +54,53 @@ const API = {
         }).then(function(data) {
             return data;
         });
+    },
+
+    isNGO(sessionGUID){
+        return fetch('https://api-event-platform.playmob.com/user/isNGO', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              sessionGUID: sessionGUID
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+    },
+
+    eventSearch(campaignGUID, name, statusID, lat, lng, distanceMiles, countryCode, startDate, endDate, typeID, capacity, NGOGUID, NGOSearch, userSearch){
+        return fetch('https://api-event-platform.playmob.com/event/search', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              campaignGUID: campaignGUID,
+              name: name,
+              statusID: statusID,
+              lat: lat,
+              lng: lng,
+              distanceMiles: distanceMiles,
+              countryCode: countryCode,
+              startDate: startDate,
+              endDate: endDate,
+              typeID: typeID,
+              capacity: capacity,
+              NGOGUID: NGOGUID,
+              NGOSearch: NGOSearch,
+              userSearch: userSearch
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
     }
 
     /*

@@ -45,54 +45,54 @@ class HomePage extends Component {
           name: "Jims first test event",
           startDate: "2019-04-21 00:07:00",
           endDate: "2019-04-21 00:17:00",
-          location: "London",
+          state: "London",
           countryCode: "UK",
-          imagePath: "beach-cleanup.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/beach-clean-up.jpg"
         },
         {
           id:2,
           name: "Jims second test event",
           startDate: "2019-04-22 00:07:00",
           endDate: "2019-04-22 00:17:00",
-          location: "Cardiff",
+          state: "Cardiff",
           countryCode: "UK",
-          imagePath: "beach-cleanup2.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/street-clean-up.jpg"
         },
         {
           id:3,
           name: "Jims third test event",
           startDate: "2019-04-21 00:13:00",
           endDate: "2019-04-21 00:17:00",
-          location: "Manchester",
+          state: "Manchester",
           countryCode: "UK",
-          imagePath: "beach-cleanup.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/river-clean-up.jpg"
         },
         {
           id:4,
           name: "Jims fourth test event",
           startDate: "2019-04-19 00:09:00",
           endDate: "2019-04-19 00:13:00",
-          location: "Chicago",
+          state: "Chicago",
           countryCode: "USA",
-          imagePath: "beach-cleanup2.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/beach-clean-up.jpg"
         },
         {
           id:5,
           name: "Jims fifth test event",
           startDate: "2019-04-22 00:07:00",
           endDate: "2019-04-22 00:17:00",
-          location: "San Fran",
+          state: "San Fran",
           countryCode: "USA",
-          imagePath: "beach-cleanup.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/street-clean-up.jpg"
         },
         {
           id:6,
           name: "Jims sixth test event",
           startDate: "2019-04-21 00:09:00",
           endDate: "2019-04-21 00:12:00",
-          location: "London",
+          state: "London",
           countryCode: "UK",
-          imagePath: "beach-cleanup2.png"
+          imagePath: "https://s3-eu-west-1.amazonaws.com/playmob-event-platform-uploads/stock/river-clean-up.jpg"
         }
 
       ]
@@ -135,7 +135,7 @@ class HomePage extends Component {
                 <Map mapCentre={this.state.mapCentre}/>
                 <EventSearchBox handleSearch={this.setMapCentre}/>
             </div>
-            <RecentEventsList events={this.state.events}/>
+            <RecentEventsList events={this.state.events} titleText="RECENTLY ADDED EVENTS" showAllLink="true"/>
         </div>
         <Footer />
       </div>
