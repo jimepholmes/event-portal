@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import Registration from './Registration';
 import Login from './Login';
 import HomePage from './HomePage';
 import NGOHome from './NGOHome';
+import EventDetail from './EventDetail';
 import EventSearch from './EventSearch';
 import MenuItem from './components/Menu/MenuItem/MenuItem';
 import Utils from './util/utils';
@@ -139,6 +140,9 @@ class App extends Component {
           )}/>
           <Route exact path="/ngo" render={props => (
             <NGOHome loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
+          )}/>
+          <Route exact path="/event/:guid" render={props => (
+            <EventDetail loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
         </Switch>
       </Router>

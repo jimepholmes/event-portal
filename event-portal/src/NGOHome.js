@@ -37,11 +37,9 @@ class HomePage extends Component {
   
     getNGOEvents(){
         API.eventSearch(Utils.getCampaignGUID(), "", "", "", "", "", "", "", "", "", "", "", true, false).then(theEvents => {
-            console.log(theEvents);
             this.setState({
                 events: theEvents
               })  
-        
         })
 
         /*

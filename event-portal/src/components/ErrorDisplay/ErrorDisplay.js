@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './ErrorDisplay.css';
 
-const ErrorDisplay = (props) => {
-
+const ErrorDisplay = props => {
     return (
         <h1 className={props.style}>{props.message}</h1>
     )
 }
 
-ErrorDisplay.PropTypes = {
+ErrorDisplay.propTypes = {
     message: PropTypes.string.isRequired,
     style: PropTypes.string.isRequired
 };

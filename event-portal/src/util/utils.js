@@ -1,5 +1,6 @@
 
 const Utils = {
+
     getCampaignGUID(){
         return "fcfb9fdc-6934-4a2c-8b39-f307d1845a00"  //world earth day
     },
