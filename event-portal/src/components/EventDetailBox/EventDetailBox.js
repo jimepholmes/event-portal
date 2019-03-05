@@ -10,9 +10,19 @@ const EventDetailBox = (props) => {
                 <div className="EventDetailHeader">
                     {props.eventDetail.name}
                 </div>
-                <div className="EventDetailIntro">
-                    Enter your location.
-                    <img src="images/icons/location.png" />
+                <div className="EventDetailDateLocation">
+                    <div>
+                        <img src="images/icons/datetime.png" className="DetailIcon"/>
+                    </div>
+                    <div>
+                        {props.eventDetail.startDate}
+                    </div>
+                    <div className="AddressIcon">
+                        <img src="images/icons/location.png" className="DetailIcon"/>
+                    </div>
+                    <div className="Address">
+                        {props.eventDetail.address1}, {props.eventDetail.state}, {props.eventDetail.countryCode}
+                    </div>
                 </div>
                 <div className="EventDetailInputBox">
                     Something else here

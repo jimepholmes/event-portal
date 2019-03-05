@@ -5,7 +5,7 @@
 }
 
 .DetailControls{
-    padding-top:40px;
+    padding-top:30px;
 }
 
 .EventDetailHeader{
@@ -19,7 +19,7 @@
 }
 
 .EventDetailInputBox{
-    padding-top: 15px;
+    padding-top: 10px;
     width:300px;
     margin:auto;
 }
@@ -28,3 +28,28 @@
     padding-top: 20px;    
 }
 
+.DetailIcon{
+    height:50px;
+}
+
+.EventDetailDateLocation{
+    margin: auto;
+    padding: 50px;
+    display:flex;
+    align-items: center;
+    font-size: 0.7rem;
+    width: 70%;
+}
+
+.EventDetailDateLocation > div {
+    padding: 10px;
+    text-align: left;
+}
+
+.AddressIcon{
+    margin-left: auto;
+}
+
+.Address {
+    width:150px;
+}
