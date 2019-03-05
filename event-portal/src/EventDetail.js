@@ -10,8 +10,6 @@ import Footer from './components/Footer/Footer';
 import API from './util/API';
 import Utils from './util/utils';
 import './EventDetail.css';
-import * as queryString from "query-string";
-
 
 class EventDetail extends Component {
   constructor(props){
@@ -26,11 +24,10 @@ class EventDetail extends Component {
   }
 
   componentDidMount(){
-      console.log("here");
-      console.log(this.props);
-    const parsedQuery = queryString.parse(this.props.location.search);
-    console.log(`parsed: ${parsedQuery}`);
-    this.getEvent();
+    console.log(`qs: ${Utils.getUrlParameter("evt")}`);
+    if (Utils.getUrlParameter("evt").length>0){
+        this.getEvent();
+    }
   }
   
     setMapCentre(searchText){
@@ -40,12 +37,14 @@ class EventDetail extends Component {
     }
 
   getEvent(){
-    API.eventSearch(Utils.getCampaignGUID(), "", "", "", "", "", "", "", "", "", "", "", true, false).then(theEvents => {
-        console.log(theEvents);
+    API.getEvent(Utils.getCampaignGUID(), Utils.getUrlParameter("evt")).then(theEvent => {
+        console.log("got the event:")
+        console.log(theEvent);
+        theEvent[0].mapLocation = `${theEvent[0].lat} ${theEvent[0].lng}`;
+        console.log(`maploc: ${theEvent[0].mapLocation}`)
         this.setState({
-            events: theEvents
+            event: theEvent[0]
           })  
-    
     })
   }
 
@@ -78,7 +77,7 @@ class EventDetail extends Component {
         <div className="desktop">
             <ActionBar />
             <div className="MapEventSearch">
-                <Map mapCentre={this.state.mapCentre}/>
+                <Map mapCentre={this.state.event.mapLocation}/>
             </div>
         </div>
         <Footer />

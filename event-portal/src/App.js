@@ -141,7 +141,7 @@ class App extends Component {
           <Route exact path="/ngo" render={props => (
             <NGOHome loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
-          <Route exact path="/event/:guid" render={props => (
+          <Route exact path="/event" render={props => (
             <EventDetail loggedIn={this.state.loggedIn} menu={this.state.menu} menuItems={this.state.menuItems} handleMenuClick={this.handleMenuClick} menuOpen={this.state.menuOpen} messageCount={this.state.messageCount} containerStyle={this.state.containerStyle}/>
           )}/>
         </Switch>

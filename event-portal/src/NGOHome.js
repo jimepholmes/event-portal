@@ -119,43 +119,33 @@ class HomePage extends Component {
       }
     }    
 
-    if (this.state.NGOUser){
-        return (
-            <div className="App">
-              <TitleBar loggedIn={this.props.loggedIn} messageCount="0"/>
-              <div style={this.props.containerStyle}>
-                <MenuButton open={this.props.menuOpen} onClick={()=>this.props.handleMenuClick()} color='white'/>
-              </div>
-              <Menu open={this.props.menuOpen}>
-                  {this.props.menuItems}
-              </Menu>
-              <Header headerText="EARTH DAY 2019"/>
-              <div className="desktop">
+      return (
+          <div className="App">
+            <TitleBar loggedIn={this.props.loggedIn} messageCount="0"/>
+            <div style={this.props.containerStyle}>
+              <MenuButton open={this.props.menuOpen} onClick={()=>this.props.handleMenuClick()} color='white'/>
+            </div>
+            <Menu open={this.props.menuOpen}>
+                {this.props.menuItems}
+            </Menu>
+            <Header headerText="EARTH DAY 2019"/>
+            { this.state.NGOUser
+                ? <div className="desktop">
                   <RecentEventsList events={this.state.events} titleText="MY EVENTS"/>
-              </div>
-              <GenericButton enabled="true" containerStyle={styles.newEvent} caption="CREATE NEW EVENT" onChange={this.buttonClick}/>
-              <Footer />
-            </div>
-          );      
-    }else{
-        return (
-            <div className="App">
-              <TitleBar loggedIn={this.props.loggedIn} messageCount="0"/>
-              <div style={this.props.containerStyle}>
-                <MenuButton open={this.props.menuOpen} onClick={()=>this.props.handleMenuClick()} color='white'/>
-              </div>
-              <Menu open={this.props.menuOpen}>
-                  {this.props.menuItems}
-              </Menu>
-              <Header headerText="EARTH DAY 2019"/>
-              <div className="desktop">
-                  <br/>
-                  Sorry, you need to be logged in as an NGO to view this page
-              </div>
-              <Footer />
-            </div>
-          )      
-    }
+                </div>
+              : <div className="desktop">
+                    <br/>
+                    Sorry, you need to be logged in as an NGO to view this page
+                </div>
+              }
+
+              {this.state.NGOUser
+                ?<GenericButton enabled="true" containerStyle={styles.newEvent} caption="CREATE NEW EVENT" onChange={this.buttonClick} />
+                : <div></div>
+              }
+            <Footer />
+          </div>
+        );      
   }
 }
 

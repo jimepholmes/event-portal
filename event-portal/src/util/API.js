@@ -101,7 +101,25 @@ const API = {
         }).then(function(data) {
             return data;
         });
-    }
+    },
+
+    getEvent(campaignGUID, eventGUID){
+        return fetch(`https://api-event-platform.playmob.com/event/detail/${eventGUID}`, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              campaignGUID: campaignGUID
+            })
+        }).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            return data;
+        });
+    },
+
 
     /*
     newUser(term, location, sortBy){
