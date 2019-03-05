@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import SubmitEventButton from './components/Buttons/SubmitEvent/SubmitEvent';
 import ActionBar from './components/ActionBar/ActionBar';
 import Map from './components/Map/Map';
+import EventDetailBox from './components/EventDetailBox/EventDetailBox';
 import Footer from './components/Footer/Footer';
 import API from './util/API';
 import Utils from './util/utils';
@@ -75,9 +76,9 @@ class EventDetail extends Component {
             </div>
         </div> 
         <div className="desktop">
-            <ActionBar />
             <div className="MapEventSearch">
                 <Map mapCentre={this.state.event.mapLocation}/>
+                <EventDetailBox eventDetail={this.state.event}/>
             </div>
         </div>
         <Footer />

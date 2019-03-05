@@ -6,7 +6,7 @@ class MessageIcon extends React.Component{
         return(
             <div className="Container">
                 <div>
-                    <img className="MessageIconImage" src={require('./message.png')} alt='You have {this.props.messageCount} Messages'/>
+                    <img className="MessageIconImage" src='images/icons/message.png' alt='You have {this.props.messageCount} Messages'/>
                 </div>
                 <div className="MessageCount">{this.props.messageCount}</div>
             </div>

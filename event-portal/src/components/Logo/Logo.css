@@ -2,9 +2,9 @@
     position: absolute;
     top: 7px;
     left: calc(50% - 25px);
-    background-image: url('./niantic-logo-white.png');
+    background-image: url('/images/logos/niantic-logo-white.png');
 }
 
 .LogoImage{
     width:50px;
-}
+} 

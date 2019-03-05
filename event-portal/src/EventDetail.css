@@ -1,0 +1,29 @@
+  
+  .mobileButtons{
+    display: none;
+  }
+  
+  .desktop{
+    display: block;
+  }
+  
+  .MapEventSearch{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 400px;
+    margin: auto;
+    width: 100%;
+  }
+    
+  @media only screen and (max-width: 700px) {
+    .mobileButtons{
+      display: block;
+      height: 120px;
+    }
+  
+    .desktop{
+      display:none;
+    }
+  }
